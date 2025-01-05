@@ -37,13 +37,13 @@ public class SimulationUseCaseImpl implements SimulationUseCase {
     @Override
     public SimulationDomain create(SimulationRequestDomain simulationRequestDomain) {
 
-        boolean hasFraud = antiFraudGateway.validate(simulationRequestDomain.clientId(), simulationRequestDomain.amount());
+        boolean hasFraud = antiFraudGateway.validate(simulationRequestDomain.borrowerId(), simulationRequestDomain.amount());
 
         if (hasFraud) {
             throw new BusinessException("Simulação não pode ser concluída");
         }
 
-        double interestRate = interestRateGateway.getMonthlyInterestRate(simulationRequestDomain.creditorId());
+        double interestRate = interestRateGateway.getMonthlyInterestRate(simulationRequestDomain.lenderId());
 
         BigDecimal totalInterestAmount = calculateTotalInterestAmount(simulationRequestDomain.amount(), interestRate,
                 simulationRequestDomain.installments());

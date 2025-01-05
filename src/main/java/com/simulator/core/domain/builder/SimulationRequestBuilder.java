@@ -6,8 +6,8 @@ import java.math.BigDecimal;
 
 public class SimulationRequestBuilder {
 
-    private String clientId;
-    private String creditorId;
+    private String borrowerId;
+    private String lenderId;
     private BigDecimal amount;
     private int installments;
 
@@ -16,13 +16,13 @@ public class SimulationRequestBuilder {
         return this;
     }
 
-    public SimulationRequestBuilder clientId(String clientId) {
-        this.clientId = clientId;
+    public SimulationRequestBuilder borrowerId(String borrowerId) {
+        this.borrowerId = borrowerId;
         return this;
     }
 
-    public SimulationRequestBuilder creditorId(String creditorId) {
-        this.creditorId = creditorId;
+    public SimulationRequestBuilder lenderId(String lenderId) {
+        this.lenderId = lenderId;
         return this;
     }
 
@@ -33,6 +33,6 @@ public class SimulationRequestBuilder {
 
 
     public SimulationRequestDomain build() {
-        return new SimulationRequestDomain(clientId, creditorId, amount, installments);
+        return new SimulationRequestDomain(borrowerId, lenderId, amount, installments);
     }
 }

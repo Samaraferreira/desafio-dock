@@ -5,11 +5,10 @@ import com.simulator.core.domain.builder.SimulationRequestBuilder;
 import jakarta.validation.constraints.*;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 public record SimulationRequest(
         @NotNull
-        String clientId,
+        String borrowerId,
 
         @NotNull
         int installments,
@@ -19,12 +18,12 @@ public record SimulationRequest(
         BigDecimal amount
 ) {
 
-        public SimulationRequestDomain toDomain(String creditorId) {
+        public SimulationRequestDomain toDomain(String lenderId) {
                 return new SimulationRequestBuilder()
                         .amount(amount)
                         .installments(installments)
-                        .clientId(clientId)
-                        .creditorId(creditorId)
+                        .borrowerId(borrowerId)
+                        .lenderId(lenderId)
                         .build();
         }
 }

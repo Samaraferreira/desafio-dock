@@ -54,9 +54,9 @@ class SimulationDomainUseCaseImplTest {
     public void shouldCreateSimulation(SimulationDomain expected) {
         SimulationRequestDomain mockedRequest = buildMockedRequest(expected);
 
-        when(interestRateGateway.getMonthlyInterestRate(mockedRequest.creditorId()))
+        when(interestRateGateway.getMonthlyInterestRate(mockedRequest.lenderId()))
                 .thenReturn(expected.interestRate());
-        when(antiFraudGateway.validate(mockedRequest.clientId(), mockedRequest.amount()))
+        when(antiFraudGateway.validate(mockedRequest.borrowerId(), mockedRequest.amount()))
                 .thenReturn(false);
 
         SimulationDomain result = simulationUseCase.create(mockedRequest);
@@ -66,7 +66,7 @@ class SimulationDomainUseCaseImplTest {
         assertEquals(round(expected.totalInterestAmount()), result.totalInterestAmount());
         assertEquals(expected.interestRate(), result.interestRate());
 
-        verify(antiFraudGateway).validate(mockedRequest.clientId(), mockedRequest.amount());
+        verify(antiFraudGateway).validate(mockedRequest.borrowerId(), mockedRequest.amount());
         verify(simulationGateway).create(any(SimulationDomain.class));
         verify(notificationGateway).notify(result);
     }
@@ -83,9 +83,9 @@ class SimulationDomainUseCaseImplTest {
     private static SimulationRequestDomain buildMockedRequest(SimulationDomain expected) {
         return new SimulationRequestBuilder()
                 .amount(expected.amount())
-                .creditorId(expected.creditorId())
+                .lenderId(expected.lenderId())
                 .installments(expected.installments())
-                .clientId(expected.clientId())
+                .borrowerId(expected.borrowerId())
                 .build();
     }
 

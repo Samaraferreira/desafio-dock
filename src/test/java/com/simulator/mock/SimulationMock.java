@@ -21,8 +21,8 @@ public class SimulationMock {
     public static SimulationDomain createSimulation(double interestRate,
                                                      BigDecimal totalInterestAmount, BigDecimal totalAmount) {
         return new SimulationBuilder()
-                .clientId("1222")
-                .creditorId("21344")
+                .borrowerId("1222")
+                .lenderId("21344")
                 .amount(BigDecimal.valueOf(2000))
                 .interestRate(interestRate)
                 .installments(12)

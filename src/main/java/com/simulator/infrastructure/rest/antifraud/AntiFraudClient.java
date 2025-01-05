@@ -6,5 +6,5 @@ import java.math.BigDecimal;
 
 public interface AntiFraudClient {
 
-    boolean validate(@RequestParam String clientId, @RequestParam BigDecimal amount);
+    boolean validate(@RequestParam String borrowerId, @RequestParam BigDecimal amount);
 }

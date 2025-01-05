@@ -3,8 +3,8 @@ package com.simulator.core.domain;
 import java.math.BigDecimal;
 
 public record SimulationRequestDomain(
-        String clientId,
-        String creditorId,
+        String borrowerId,
+        String lenderId,
         BigDecimal amount,
         int installments
 ) {}

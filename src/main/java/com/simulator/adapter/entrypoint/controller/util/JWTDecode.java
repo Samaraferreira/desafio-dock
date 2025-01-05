@@ -2,7 +2,7 @@ package com.simulator.adapter.entrypoint.controller.util;
 
 public class JWTDecode {
 
-    public static String getCreditorIdFromToken(String jwt) {
+    public static String getLenderIdFromToken(String jwt) {
         return "mock";
     }
 }

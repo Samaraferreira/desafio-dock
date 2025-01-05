@@ -6,8 +6,8 @@ import java.util.UUID;
 
 public record SimulationDomain(
         UUID id,
-        String clientId,
-        String creditorId,
+        String borrowerId,
+        String lenderId,
         BigDecimal amount,
         int installments,
         double interestRate,

@@ -10,8 +10,8 @@ import java.util.UUID;
 public class SimulationBuilder {
 
     private UUID id;
-    private String clientId;
-    private String creditorId;
+    private String borrowerId;
+    private String lenderId;
     private BigDecimal amount;
     private int installments;
     private double interestRate;
@@ -27,13 +27,13 @@ public class SimulationBuilder {
         return this;
     }
 
-    public SimulationBuilder clientId(String clientId) {
-        this.clientId = clientId;
+    public SimulationBuilder borrowerId(String borrowerId) {
+        this.borrowerId = borrowerId;
         return this;
     }
 
-    public SimulationBuilder creditorId(String creditorId) {
-        this.creditorId = creditorId;
+    public SimulationBuilder lenderId(String lenderId) {
+        this.lenderId = lenderId;
         return this;
     }
 
@@ -83,7 +83,7 @@ public class SimulationBuilder {
     }
 
     public SimulationDomain build() {
-        return new SimulationDomain(id, clientId, creditorId, amount, installments, interestRate, totalAmount,
+        return new SimulationDomain(id, borrowerId, lenderId, amount, installments, interestRate, totalAmount,
                 totalInterestAmount, createdAt, updatedAt, expiration, status);
     }
 }

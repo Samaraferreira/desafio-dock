@@ -8,7 +8,6 @@ import com.simulator.infrastructure.persistence.dynamodb.converters.BigDecimalCo
 import com.simulator.infrastructure.persistence.dynamodb.converters.LocalDateTimeConverter;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -19,10 +18,10 @@ public class SimulationEntity {
     private String id;
 
     @DynamoDBAttribute
-    private String clientId;
+    private String borrowerId;
 
     @DynamoDBAttribute
-    private String creditorId;
+    private String lenderId;
 
     @DynamoDBAttribute
     private BigDecimal amount;
@@ -56,11 +55,11 @@ public class SimulationEntity {
     @DynamoDBAttribute
     private String status;
 
-    public SimulationEntity(String clientId, String creditorId, BigDecimal amount, int installments,
+    public SimulationEntity(String borrowerId, String lenderId, BigDecimal amount, int installments,
                             double interestRate, BigDecimal totalAmount, BigDecimal totalInterestAmount, LocalDateTime expiration) {
         this.id = UUID.randomUUID().toString();
-        this.clientId = clientId;
-        this.creditorId = creditorId;
+        this.borrowerId = borrowerId;
+        this.lenderId = lenderId;
         this.amount = amount;
         this.installments = installments;
         this.interestRate = interestRate;
@@ -73,8 +72,8 @@ public class SimulationEntity {
 
     public static SimulationEntity fromDomain(SimulationDomain simulationDomain) {
         return new SimulationEntity(
-                simulationDomain.clientId(),
-                simulationDomain.creditorId(),
+                simulationDomain.borrowerId(),
+                simulationDomain.lenderId(),
                 simulationDomain.amount(),
                 simulationDomain.installments(),
                 simulationDomain.interestRate(),
@@ -88,8 +87,8 @@ public class SimulationEntity {
         return new SimulationBuilder()
                 .id(UUID.fromString(id))
                 .amount(amount)
-                .clientId(clientId)
-                .creditorId(creditorId)
+                .borrowerId(borrowerId)
+                .lenderId(lenderId)
                 .installments(installments)
                 .interestRate(interestRate)
                 .totalAmount(totalAmount)

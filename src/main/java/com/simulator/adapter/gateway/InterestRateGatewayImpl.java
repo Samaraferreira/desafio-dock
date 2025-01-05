@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class InterestRateGatewayImpl implements InterestRateGateway {
 
-    public double getMonthlyInterestRate(String creditorId) {
+    public double getMonthlyInterestRate(String lenderId) {
         return 0.04;
     }
 }

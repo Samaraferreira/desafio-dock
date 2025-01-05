@@ -17,7 +17,7 @@ public class AntiFraudGatewayImpl implements AntiFraudGateway {
     }
 
     @Override
-    public boolean validate(String clientId, BigDecimal amount) {
-        return antiFraudClient.validate(clientId, amount);
+    public boolean validate(String borrowerId, BigDecimal amount) {
+        return antiFraudClient.validate(borrowerId, amount);
     }
 }

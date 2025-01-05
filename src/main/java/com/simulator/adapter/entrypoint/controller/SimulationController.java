@@ -23,8 +23,8 @@ public class SimulationController {
     @PostMapping
     public SimulationResponse simulate(@RequestBody @Valid SimulationRequest simulationRequest,
                                        @RequestHeader("Authorization") String authorizationToken) {
-        String creditorId = JWTDecode.getCreditorIdFromToken(authorizationToken);
-        SimulationRequestDomain simulationDomain = simulationRequest.toDomain(creditorId);
+        String lenderId = JWTDecode.getLenderIdFromToken(authorizationToken);
+        SimulationRequestDomain simulationDomain = simulationRequest.toDomain(lenderId);
         return SimulationResponse.fromDomain(simulationUseCase.create(simulationDomain));
     }
 
