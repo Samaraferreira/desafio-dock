@@ -1,5 +1,6 @@
 # Simulador de empréstimo
 
+:heavy_exclamation_mark: Não está 100% funcional
 
 ## Como executar?
 
