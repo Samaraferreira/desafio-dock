@@ -1,0 +1,15 @@
+server:
+  port: 8081
+springdoc:
+  swagger-ui:
+    path: /api-docs
+  api-docs:
+    enabled: true
+swagger-ui:
+  enabled: true
+aws:
+  dynamodb:
+    endpoint: http://localhost:54000  # DynamoDB Local endpoint (for local development)
+  region: us-east-1
+  access-key: 123
+  secret-access-key: 123
