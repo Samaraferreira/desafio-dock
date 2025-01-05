@@ -20,30 +20,6 @@ docker-compose up -d
 ./gradlew bootRun
 ```
 
-## Requisições - Envio de simulação
-Endpoint: /simulationDomain
-
-### Request Body
-
-```
-{
-	"paymentTerm": 12,
-	"birthDate": "2001-12-01",
-	"amount": 10000,
-	"email": "test@gmail.com"
-}
-```
-
-### Response Body
-
-```
-{
-	"totalAmount": 10272.90,
-	"monthlyPayment": 856.07,
-	"totalInterestAmount": 272.90
-}
-```
-
 ## Explicação sobre a estrutura do projeto e decisões de arquitetura
 
 
