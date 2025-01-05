@@ -1,4 +1,4 @@
-package com.simulator.infrastructure.configuration;
+package com.simulator.adapter.configuration;
 
 import com.simulator.core.gateway.AntiFraudGateway;
 import com.simulator.core.gateway.InterestRateGateway;

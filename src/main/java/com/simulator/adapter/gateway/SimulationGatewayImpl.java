@@ -1,4 +1,4 @@
-package com.simulator.infrastructure.gateway;
+package com.simulator.adapter.gateway;
 
 import com.simulator.core.domain.SimulationDomain;
 import com.simulator.core.gateway.SimulationGateway;

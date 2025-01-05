@@ -1,4 +1,4 @@
-package com.simulator.infrastructure.entrypoint.controller.dto;
+package com.simulator.adapter.entrypoint.controller.dto;
 
 import java.time.LocalDateTime;
 

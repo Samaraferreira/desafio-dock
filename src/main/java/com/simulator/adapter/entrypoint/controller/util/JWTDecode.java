@@ -1,4 +1,4 @@
-package com.simulator.infrastructure.entrypoint.controller.util;
+package com.simulator.adapter.entrypoint.controller.util;
 
 public class JWTDecode {
 

@@ -1,4 +1,4 @@
-package com.simulator.infrastructure.gateway;
+package com.simulator.adapter.gateway;
 
 import com.simulator.core.gateway.AntiFraudGateway;
 import com.simulator.infrastructure.rest.antifraud.AntiFraudClient;

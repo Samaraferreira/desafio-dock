@@ -1,10 +1,10 @@
-package com.simulator.infrastructure.entrypoint.controller;
+package com.simulator.adapter.entrypoint.controller;
 
 import com.simulator.core.domain.SimulationRequestDomain;
-import com.simulator.infrastructure.entrypoint.controller.dto.SimulationRequest;
-import com.simulator.infrastructure.entrypoint.controller.dto.SimulationResponse;
+import com.simulator.adapter.entrypoint.controller.dto.SimulationRequest;
+import com.simulator.adapter.entrypoint.controller.dto.SimulationResponse;
 import com.simulator.core.usecase.SimulationUseCase;
-import com.simulator.infrastructure.entrypoint.controller.util.JWTDecode;
+import com.simulator.adapter.entrypoint.controller.util.JWTDecode;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

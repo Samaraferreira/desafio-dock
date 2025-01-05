@@ -1,4 +1,4 @@
-package com.simulator.infrastructure.gateway;
+package com.simulator.adapter.gateway;
 
 import com.simulator.core.gateway.InterestRateGateway;
 import org.springframework.stereotype.Component;
